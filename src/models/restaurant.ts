@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const menuItemSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    price: { type: Number, required: true },
+  name: { type: String, required: true },
+  price: { type: Number, required: true },
 });
 
 const restaurantSchema = new mongoose.Schema({
@@ -15,8 +15,8 @@ const restaurantSchema = new mongoose.Schema({
   cuisines: [{ type: String, required: true }],
   menuItems: [menuItemSchema],
   imageUrl: { type: String, required: true },
-  lastUpdate: { type: Date, default: Date.now},
+  lastUpdate: { type: Date, default: Date.now },
 });
 
-const Restaurant  = mongoose.model("Restaurant", restaurantSchema);
+const Restaurant = mongoose.model("Restaurant", restaurantSchema);
 export default Restaurant;
