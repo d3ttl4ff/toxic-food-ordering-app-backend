@@ -28,3 +28,13 @@ router.post(
 );
 
 export default router;
+
+//PUT /api/my/restaurant
+router.put(
+  "/",
+  upload.single("imageFile"),
+  validateMyRestaurantRequest,
+  jwtCheck,
+  jwtParse,
+  MyRestaurantController.updateMyRestaurant
+);
