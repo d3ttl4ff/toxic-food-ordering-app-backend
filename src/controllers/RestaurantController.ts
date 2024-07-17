@@ -45,7 +45,7 @@ const searchRestaurants = async (req: Request, res: Response) => {
     const skip = (page - 1) * pageSize;
 
     const restaurants = await Restaurant.find(query)
-      .sort({ sortOption: 1 })
+      .sort({ [sortOption]: 1 })
       .skip(skip)
       .limit(pageSize)
       .lean();
